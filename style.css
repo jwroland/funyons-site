@@ -1,0 +1,190 @@
+/*Author: Jacob Roland*/
+
+/* BASE MOBILE STYLES*/
+
+/* Sets the main text styling and background for mobile screens */
+body {
+  font-family: 'Trebuchet MS', sans-serif; /* Clean, readable sans-serif font */
+  background-color: #fffceb;               /* Light off-yellow background for soft contrast */
+  color: #222;                             /* Dark gray text for readability */
+  margin: 0;                               /* Removes default browser margin */
+  padding: 0;                              /* Removes default browser padding */
+  text-align: center;                      /* Centers content for narrow mobile screens */
+}
+
+/* Header container styles */
+header {
+  background-color: #f4d03f;               /* Bright yellow header resembling a news banner */
+  padding: 10px;                           /* Space around header text */
+  border-bottom: 3px solid #d4ac0d;        /* Slightly darker bottom border for depth */
+}
+
+/* Main site title */
+h1 {
+  font-size: 1.8em;                        /* Larger font size for site title */
+  margin: 0;                               /* Removes default margin */
+}
+
+/* Navigation container */
+nav {
+  margin-top: 8px;                         /* Adds space above navigation links */
+}
+
+/* Navigation links (menu items) */
+nav a {
+  text-decoration: none;                   /* Removes underlines */
+  color: #222;                             /* Dark text for contrast on yellow */
+  font-weight: bold;                       /* Bold for emphasis */
+  margin: 0 10px;                          /* Even horizontal spacing between links */
+}
+
+/* Adds a hover effect for navigation links */
+nav a:hover {
+  color: #b9770e;                          /* Matches story title color for consistency */
+  text-decoration: underline;              /* Underline on hover for visual feedback */
+}
+
+/* Main content area */
+main {
+  padding: 10px;                           /* Adds consistent spacing around content */
+}
+
+/* Each story section box */
+section {
+  background-color: #fff;                  /* White background for readability */
+  border: 2px solid #ccc;                  /* Light gray border between stories */
+  margin: 15px 0;                          /* Space above and below each story */
+  padding: 10px;                           /* Inner padding for readability */
+}
+
+/* Ensures each floated image clears properly */
+section::after {
+  content: "";
+  display: block;
+  clear: both;                             /* Prevents overlapping when floats are active */
+}
+
+/* Story headline styling */
+section h2 {
+  color: #b9770e;                          /* Warm orange tone for article titles */
+}
+
+/* Story image styling */
+section img {
+  width: 100%;                             /* Full-width images on mobile */
+  height: auto;                            /* Maintains proper aspect ratio */
+  border-radius: 8px;                      /* Slightly rounded corners */
+}
+
+/* Footer styling */
+footer {
+  background-color: #222;                  /* Dark gray for contrast */
+  color: #f4d03f;                          /* Bright yellow text to match header theme */
+  padding: 20px;                           /* Space inside footer */
+  font-size: 0.95em;                       /* Slightly smaller text */
+  font-style: italic;                      /* Gives footer a stylized “tagline” feel */
+  border-top: 3px solid #d4ac0d;           /* Matches header border for visual unity */
+}
+
+
+/* MEDIA QUERY #1 (min-width: 500px) PURPOSE: Adjust for small tablets and larger mobile screens*/
+@media (min-width: 500px) {
+
+  /* Slightly lighter background to signal wider layout */
+  body {
+    background-color: #fff4c2;
+    padding: 5px 15px;                     /* Adds more breathing room on larger devices */
+  }
+
+  /* Floats images to the left so text wraps beside them */
+  section img {
+    width: 45%;                            /* Shrinks image to allow room for text */
+    float: left;                           /* Moves image to the left side */
+    margin-right: 10px;                    /* Adds space between image and text */
+  }
+
+  /* Aligns paragraphs left for a newspaper-style layout */
+  section p {
+    text-align: left;
+  }
+}
+
+
+/* MEDIA QUERY #2 (min-width: 768px) PURPOSE: Adjust for tablets in landscape or small laptops*/
+@media (min-width: 768px) {
+
+  /* Makes the header relative to position navigation inside it */
+  header {
+    position: relative;
+  }
+
+  /* Positions navigation menu in the top-right corner */
+  nav {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+  }
+
+  /* Displays stories side-by-side using inline-block */
+  section {
+    width: 45%;                            /* Two columns with spacing */
+    display: inline-block;                 /* Allows horizontal alignment */
+    vertical-align: top;                   /* Aligns tops of boxes evenly */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow depth */
+  }
+}
+
+
+/* MEDIA QUERY #3 (min-width: 1024px) PURPOSE: Adjust for desktop and widescreen layouts*/
+@media (min-width: 1024px) {
+
+  /* Centers main content and restricts width for readability */
+  body {
+    width: 80%;                            /* Keeps layout centered */
+    margin: auto;                          /* Horizontally centers content */
+  }
+
+  /* Enlarges site title for desktop display */
+  h1 {
+    font-size: 2.6em;
+    letter-spacing: 1px;                   /* Slight spacing for dramatic emphasis */
+  }
+
+  /* Adds gradient banner for visual polish */
+  header {
+    background-image: linear-gradient(to right, #f7dc6f, #f4d03f, #f0b27a);
+  }
+
+  /* Lightens footer at larger sizes for balance */
+  footer {
+    background-color: #f0b27a;
+    color: #222;
+  }
+
+  /* Adds soft box shadows to story boxes for depth */
+  #story1 {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  #story2 {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  #story3 {
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Assigns slightly different background tints to each story
+     to visually separate content and enhance readability */
+  #story1 {
+    background-color: #fff3da;             /* Warm tan for climbing story */
+  }
+
+  #story2 {
+    background-color: #e8f3ff;             /* Soft cool blue for gaming story */
+  }
+
+  #story3 {
+    background-color: #fff0e8;             /* Light coral/peach for crypto story */
+  }
+}
